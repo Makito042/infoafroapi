@@ -23,6 +23,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the African Inflation Prediction API. Visit /docs for documentation."}
+
+
 # Define Pydantic input model with data types and constraints
 class InflationInput(BaseModel):
     country: str
